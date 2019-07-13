@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Exercise 2</title>
+    <link rel="stylesheet" type="text/css" href="tes.html.css">
+</head>
+
+<body>
+    <center>
+        <h1 class="kalkulator">Kalkulator</h1>
+        <input type="text" id="angkaPertama">
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="X">X</option>
+            <option value="/">/</option>
+            </class>
+        </select>
+        <input type="text" id="angkaKedua">
+        <input type="submit" onclick="kalkulator()" value="=">
+        <span id="hasil">0</span>
+
+        <div class="input-group flex-nowrap">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="addon-wrapping"></span>
+            </div>
+        </div>
+    </center>
+</body>
+<script language="javascript" type="text/javascript">
+    function kalkulator() {
+        var angkaPertama = parseInt(document.getElementById("angkaPertama").value);
+        var angkaKedua = parseInt(document.getElementById("angkaKedua").value);
+        var op = document.getElementById("operator").value;
+        var hasil = document.getElementById("hasil");
+        var total;
+        if (isNaN(angkaPertama) || isNaN(angkaKedua)) {
+        } else {
+            if (op == "+") {
+                total = angkaPertama + angkaKedua;
+            } else if (op == "-") {
+                total = angkaPertama - angkaKedua;
+            } else if (op == "X") {
+                total = angkaPertama * angkaKedua;
+            } else if (op == "/") {
+                total = angkaPertama / angkaKedua;
+            }
+        }
+        hasil.textContent = total;
+    }
+</script>
+</html>
